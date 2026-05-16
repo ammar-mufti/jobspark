@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(Move-Item *)",
+      "Bash(Get-Content \"C:\\\\Users\\\\Ammar\\\\AppData\\\\Local\\\\Temp\\\\claude\\\\C--Users-Ammar-projects-jobspark\\\\2f76f082-60cc-49bf-9399-3255b2ee42fe\\\\tasks\\\\b42whnht3.output\" -Wait)",
+      "Bash(Select-String -Pattern \"Success|Error|error|failed|warning|npm warn|Creating|Installing|initialized\" --SimpleMatch)"
+    ]
+  }
+}
