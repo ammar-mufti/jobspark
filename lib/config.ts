@@ -4,15 +4,18 @@ function requireEnv(key: string): string {
   return value
 }
 
-export const config = {
-  supabase: {
-    url: requireEnv('NEXT_PUBLIC_SUPABASE_URL'),
-    anonKey: requireEnv('NEXT_PUBLIC_SUPABASE_ANON_KEY'),
-  },
-  app: {
-    url: requireEnv('NEXT_PUBLIC_APP_URL'),
-  },
-} as const
+// Lazy getters — evaluated at call time, not at module load / build time
+export function getSupabaseUrl(): string {
+  return requireEnv('NEXT_PUBLIC_SUPABASE_URL')
+}
+
+export function getSupabaseAnonKey(): string {
+  return requireEnv('NEXT_PUBLIC_SUPABASE_ANON_KEY')
+}
+
+export function getAppUrl(): string {
+  return requireEnv('NEXT_PUBLIC_APP_URL')
+}
 
 // Server-only — call only inside API routes or server components
 export function getServiceKey(): string {
