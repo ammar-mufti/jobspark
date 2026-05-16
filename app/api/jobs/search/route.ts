@@ -3,6 +3,7 @@ import { getCachedJobs, storeCachedJobs } from '@/lib/cache'
 import { fetchRemotiveJobs } from '@/lib/remotive'
 
 export const runtime = 'nodejs'
+export const dynamic = 'force-dynamic'
 
 function sanitise(value: string): string {
   return value.replace(/[<>"'%;()&+]/g, '').slice(0, 100).trim()

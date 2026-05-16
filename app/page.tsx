@@ -58,7 +58,7 @@ export default function HomePage() {
       if (!res.ok) throw new Error('Search failed')
       const data = await res.json()
       setJobs(data.jobs ?? [])
-    } catch (err) {
+    } catch {
       setError('Unable to load jobs right now. Please try again.')
       setJobs([])
     } finally {
